@@ -6212,7 +6212,6 @@ void qtractorTrackView::editTempoCurveNodeChanged (void)
 		setSyncViewHoldOn(true);
 		if (m_iEditTempoCurveNodeDirty > 0 && m_pEditTimeScaleNode && m_pEditTempoCurve) {
 			// Make it an undoable command...
-			const float fOldTempo = m_pEditTimeScaleNode->tempo;
 			const float fNewTempo = m_pEditTempoCurveNodeSpinBox->tempo();
 			const unsigned short iNewBeatsPerBar = m_pEditTempoCurveNodeSpinBox->beatsPerBar();
 			const unsigned short iNewBeatDivisor = m_pEditTempoCurveNodeSpinBox->beatDivisor();
@@ -6221,7 +6220,6 @@ void qtractorTrackView::editTempoCurveNodeChanged (void)
 				= new qtractorTempoCurveEditCommand(m_pEditTempoCurve);
 			pEditTempoCurveNodeCommand->moveNode(m_pEditTimeScaleNode,
 				fNewTempo, iNewBeatsPerBar, iNewBeatDivisor, bOldAttached);
-
 			// Reset editing references...
 			m_iEditTempoCurveNodeDirty = 0;
 		}
