@@ -1,3 +1,9 @@
+qtractor-tt (0.9.2-37ubuntu1) UNRELEASED; urgency=medium
+
+  * Test release: tempotrackx branch - enabled tempo tracks functionality
+
+ -- Samo Pogačnik <samo_pogacnik@t-2.net>  Sun, 02 Dec 2018 10:40:06 +0100
+
 qtractor (0.9.2-37) unstable; urgency=low
 
   * New release: summer'18 beta

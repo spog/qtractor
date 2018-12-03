@@ -1,6 +1,6 @@
 # qtractor.pro
 #
-NAME = qtractor
+NAME = qtractor-tt
 
 TARGET = $${NAME}
 TEMPLATE = app

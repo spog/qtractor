@@ -4,7 +4,7 @@
  <id>org.rncbc.qtractor</id>
  <metadata_license>FSFAP</metadata_license>
  <project_license>GPL-2.0+</project_license>
- <name>Qtractor</name>
+ <name>Qtractor-tt</name>
  <summary>An Audio/MIDI multi-track sequencer</summary>
  <description>
   <p>Qtractor is an Audio/MIDI multi-track sequencer application
@@ -15,10 +15,10 @@
   evolve as a fairly-featured Linux Desktop Audio Workstation GUI,
   specially dedicated to the personal home-studio.</p>
  </description>
- <launchable type="desktop-id">qtractor.desktop</launchable>
+ <launchable type="desktop-id">qtractor-tt.desktop</launchable>
  <provides>
-​  <binary>qtractor</binary>
-​  <binary>qtractor_plugin_scan</binary>
+​  <binary>qtractor-tt</binary>
+​  <binary>qtractori-tt_plugin_scan</binary>
 ​ </provides>
  <screenshots>
   <screenshot type="default">

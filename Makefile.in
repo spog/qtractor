@@ -1,6 +1,6 @@
 prefix  = @ac_prefix@
 
-name    = qtractor
+name    = qtractor-tt
 
 target  = src/$(name)
 

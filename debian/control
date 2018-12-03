@@ -1,17 +1,17 @@
-Source: qtractor
+Source: qtractor-tt
 Section: sound
 Priority: extra
-Maintainer: Rui Nuno Capela <rncbc@rncbc.org>
+Maintainer: Samo Pogačnik <samo_pogacnik@t-2.net>
 Build-Depends: debhelper (>= 5), automake, pkg-config, qtbase5-dev (>= 5.1),
   qtbase5-dev-tools (>= 5.1), qttools5-dev-tools (>= 5.1), qtchooser,
   libjack-dev, libasound2-dev, libsndfile-dev, ladspa-sdk, libvorbis-dev,
-  libsamplerate-dev, librubberband-dev, dssi-dev, liblo0-dev, libmad-dev,
+  libsamplerate-dev, librubberband-dev, dssi-dev, liblo0-dev, libmad0-dev,
   libz-dev, libx11-dev, x11proto-core-dev, liblilv-dev, libsratom-dev,
   libsord-dev, libserd-dev, libsuil-dev, lv2-dev, zlib1g-dev,
   libqt5x11extras5-dev (>= 5.1)
 Standards-Version: 3.7.2
 
-Package: qtractor
+Package: qtractor-tt
 Architecture: any
 Depends: jackd, ${shlibs:Depends}, ${misc:Depends}
 Description: An Audio/MIDI multi-track sequencer.

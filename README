@@ -1,5 +1,6 @@
-Qtractor - An Audio/MIDI multi-track sequencer
-----------------------------------------------
+Qtractor-tt - An Audio/MIDI multi-track sequencer
+  (tempotrackx branch)
+-------------------------------------------------
 
 Qtractor is an audio/MIDI multi-track sequencer application written
 in C++ with the Qt framework [1]. Target platform is Linux, where the

@@ -1,5 +1,5 @@
 #!/usr/bin/make -f
-APPNAME := qtractor
+APPNAME := qtractor-tt
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1

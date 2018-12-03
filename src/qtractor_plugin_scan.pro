@@ -1,6 +1,6 @@
 # qtractor_plugin_scan.pro
 #
-NAME = qtractor
+NAME = qtractor-tt
 
 TARGET = $${NAME}_plugin_scan
 TEMPLATE = app
