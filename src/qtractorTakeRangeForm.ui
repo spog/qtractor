@@ -38,7 +38,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="qtractor.qrc">
-    <normaloff>:/images/qtractor.png</normaloff>:/images/qtractor.png</iconset>
+    <normaloff>:/images/qtractor-tt.png</normaloff>:/images/qtractor-tt.png</iconset>
   </property>
   <layout class="QGridLayout">
    <item row="0" column="0" rowspan="2">

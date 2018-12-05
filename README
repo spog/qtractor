@@ -180,12 +180,12 @@ and optionally as root:
 
 This procedure will end installing the following files:
 
-    ${prefix}/bin/qtractor
-    ${prefix}/share/applications/qtractor.desktop
-    ${prefix}/share/icons/hicolor/32x32/apps/qtractor.png
-    ${prefix}/share/qtractor/translations/qtractor_*.qm
+    ${prefix}/bin/qtractor-tt
+    ${prefix}/share/applications/qtractor-tt.desktop
+    ${prefix}/share/icons/hicolor/32x32/apps/qtractor-tt.png
+    ${prefix}/share/qtractor-tt/translations/qtractor_*.qm
 
-Just launch ${prefix}/bin/qtractor and you're off (hopefully).
+Just launch ${prefix}/bin/qtractor-tt and you're off (hopefully).
 
 Note that the default installation path ${prefix} is /usr/local.
 
