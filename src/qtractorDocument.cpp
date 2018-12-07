@@ -77,9 +77,9 @@ static void remove_dir_list ( const QList<QFileInfo>& list )
 //
 
 // Default document type suffixes (file name extensions).
-QString qtractorDocument::g_sDefaultExt  = "qts";
-QString qtractorDocument::g_sTemplateExt = "qtt";
-QString qtractorDocument::g_sArchiveExt  = "qtz";
+QString qtractorDocument::g_sDefaultExt  = "qts-tt";
+QString qtractorDocument::g_sTemplateExt = "qtt-tt";
+QString qtractorDocument::g_sArchiveExt  = "qtz-tt";
 
 // Extracted archive paths (static).
 QStringList qtractorDocument::g_extractedArchives;

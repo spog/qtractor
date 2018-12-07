@@ -3,17 +3,17 @@
   <mime-type type="application/x-qtractor-tt-session">
     <sub-class-of type="text/xml"/>
     <comment>Qtractor-tt session</comment>
-    <glob pattern="*.qtr"/>
-    <glob pattern="*.qts"/>
+    <glob pattern="*.qtr-tt"/>
+    <glob pattern="*.qts-tt"/>
   </mime-type>
   <mime-type type="application/x-qtractor-tt-template">
     <sub-class-of type="text/xml"/>
     <comment>Qtractor-tt template</comment>
-    <glob pattern="*.qtt"/>
+    <glob pattern="*.qtt-tt"/>
   </mime-type>
   <mime-type type="application/x-qtractor-tt-archive">
     <sub-class-of type="text/xml"/>
     <comment>Qtractor-tt archive</comment>
-    <glob pattern="*.qtz"/>
+    <glob pattern="*.qtz-tt"/>
   </mime-type>
 </mime-info>

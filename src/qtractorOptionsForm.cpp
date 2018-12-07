@@ -72,9 +72,9 @@ static struct
 
 } g_aSessionFormats[] = {
 
-	{ _TR("XML Default (*.%1)"), "qtr" },
-	{ _TR("XML Regular (*.%1)"), "qts" },
-	{ _TR("ZIP Archive (*.%1)"), "qtz" },
+	{ _TR("XML Default (*.%1)"), "qtr-tt" },
+	{ _TR("XML Regular (*.%1)"), "qts-tt" },
+	{ _TR("ZIP Archive (*.%1)"), "qtz-tt" },
 
 	{ NULL, NULL }
 };
@@ -1589,12 +1589,12 @@ void qtractorOptionsForm::chooseSessionTemplatePath (void)
 {
 	QString sFilename;
 
-	const QString  sExt("qtt");
+	const QString  sExt("qtt-tt");
 	const QString& sTitle
 		= tr("Session Template") + " - " QTRACTOR_TITLE;
 
 	QStringList filters;
-	filters.append(tr("Session template files (*.qtr *.qts *.%1)").arg(sExt));
+	filters.append(tr("Session template files (*.qtr-tt *.qts-tt *.%1)").arg(sExt));
 	filters.append(tr("All files (*.*)"));
 	const QString& sFilter = filters.join(";;");
 
