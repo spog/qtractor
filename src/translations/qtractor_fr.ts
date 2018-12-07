@@ -11005,8 +11005,8 @@ Voulez-vous appliquer les changements ?</translation>
     </message>
     <message>
         <location filename="../qtractorOptionsForm.cpp" line="1597"/>
-        <source>Session template files (*.qtr *.qts *.%1)</source>
-        <translation>Fichiers de modèle de session (*.qtr *.qts *.%1)</translation>
+        <source>Session template files (*.qtr-tt *.qts-tt *.%1)</source>
+        <translation>Fichiers de modèle de session (*.qtr-tt *.qts-tt *.%1)</translation>
     </message>
 </context>
 <context>

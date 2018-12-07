@@ -10886,7 +10886,7 @@ Wollen Sie diese übernehmen?</translation>
     </message>
     <message>
         <location filename="../qtractorOptionsForm.cpp" line="1597"/>
-        <source>Session template files (*.qtr *.qts *.%1)</source>
+        <source>Session template files (*.qtr-tt *.qts-tt *.%1)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

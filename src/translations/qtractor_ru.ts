@@ -9689,8 +9689,8 @@ Do you want to apply the changes?</source>
     </message>
     <message>
         <location filename="../qtractorOptionsForm.cpp" line="1597"/>
-        <source>Session template files (*.qtr *.qts *.%1)</source>
-        <translation>Файлы шаблонов сеанса (*.qtr *.qts *.%1)</translation>
+        <source>Session template files (*.qtr-tt *.qts-tt *.%1)</source>
+        <translation>Файлы шаблонов сеанса (*.qtr-tt *.qts-tt *.%1)</translation>
     </message>
     <message>
         <location filename="../qtractorOptionsForm.ui" line="34"/>
