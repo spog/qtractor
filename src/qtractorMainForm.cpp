@@ -1985,7 +1985,7 @@ bool qtractorMainForm::openSession (void)
 	// Ask for the filename to open...
 	QString sFilename;
 
-	QString sExt("qtr");
+	QString sExt("qtr-tt");
 	QStringList filters;
 #ifdef CONFIG_LIBZ
 	filters.append(tr("Session files (*.%1 *.%2 *.%3)")
@@ -2083,7 +2083,7 @@ bool qtractorMainForm::saveSession ( bool bPrompt )
 	// Ask for the file to save...
 	if (bPrompt) {
 		// Prompt the guy...
-		QString sExt("qtr");
+		QString sExt("qtr-tt");
 		QStringList filters;
 	#ifdef CONFIG_LIBZ
 		filters.append(tr("Session files (*.%1 *.%2 *.%3)")
@@ -2710,7 +2710,7 @@ void qtractorMainForm::openNsmSession (void)
 			filters << prefix_dot + qtractorDocument::defaultExt();
 			filters << prefix_dot + qtractorDocument::templateExt();
 			filters << prefix_dot + qtractorDocument::archiveExt();
-			filters << prefix_dot + "qtr";
+			filters << prefix_dot + "qtr-tt";
 			const QStringList& files
 				= dir.entryList(filters,
 					QDir::Files | QDir::NoSymLinks | QDir::Readable,

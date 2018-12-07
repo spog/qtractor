@@ -185,7 +185,7 @@ void qtractorOptions::loadOptions (void)
 
 	// Last but not least, get the defaults.
 	m_settings.beginGroup("/Default");
-	sSessionExt = m_settings.value("/SessionExt", "qtr").toString();
+	sSessionExt = m_settings.value("/SessionExt", "qtr-tt").toString();
 	bSessionTemplate = m_settings.value("/SessionTemplate", false).toBool();
 	sSessionTemplatePath = m_settings.value("/SessionTemplatePath").toString();
 	bSessionBackup = m_settings.value("/SessionBackup", false).toBool();

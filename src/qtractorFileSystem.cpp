@@ -349,7 +349,7 @@ void qtractorFileSystem::updateFilter (void)
 	QStringList filters;
 	const QString sExtMask("*.%1");
 	if (m_pSessionFilesAction->isChecked()) {
-		filters.append(sExtMask.arg("qtr"));
+		filters.append(sExtMask.arg("qtr-tt"));
 		filters.append(sExtMask.arg(qtractorDocument::defaultExt()));
 		filters.append(sExtMask.arg(qtractorDocument::templateExt()));
 	#ifdef CONFIG_LIBZ
