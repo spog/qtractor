@@ -315,12 +315,14 @@ translations_targets = \
 	src/translations/qtractor_pt.qm \
 	src/translations/qtractor_ru.qm
 
+templates_sources = \
+	src/templates/default-tt.qtt-tt
 
 export datadir = @ac_datadir@
 export mandir = @ac_mandir@
 
 translations_dir = $(datadir)/$(name)/translations
-
+templates_dir = $(datadir)/$(name)/templates
 
 export QMAKE = @ac_qmake@
 export LUPDATE = @ac_lupdate@
@@ -349,14 +351,17 @@ translations_lrelease:	translations_lupdate $(translations_targets)
 install:	$(target) translations_lrelease $(name).1
 	@$(MAKE) INSTALL_ROOT=$(DESTDIR) -f $(name).mak install
 	@install -d -v -m 0755 $(DESTDIR)$(translations_dir)
+	@install -d -v -m 0755 $(DESTDIR)$(templates_dir)
 	@install -d -v -m 0755 $(DESTDIR)$(mandir)/man1
 	@install -v -m 0644 $(translations_targets) $(DESTDIR)$(translations_dir)
+	@install -v -m 0644 $(templates_sources) $(DESTDIR)$(templates_dir)
 	@install -v -m 0644 $(name)*.1 $(DESTDIR)$(mandir)/man1
 	@gzip -vf $(DESTDIR)$(mandir)/man1/$(name)*.1
 
 uninstall:	$(DESTDIR)$(prefix)/bin/$(name)
 	@$(MAKE) INSTALL_ROOT=$(DESTDIR) -f $(name).mak uninstall
 	@rm -rvf $(DESTDIR)$(translations_dir)
+	@rm -rvf $(DESTDIR)$(templates_dir)
 	@rm -vf $(DESTDIR)$(mandir)/man1/$(name)*.1.gz
 
 
