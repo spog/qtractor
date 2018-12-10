@@ -22,7 +22,7 @@ override_dh_update_autotools_config:
 	make -f Makefile.git
 
 override_dh_auto_configure:
-	./configure --prefix=/usr
+	./configure --prefix=/usr --enable-lv2-ui-gtk2
 
 override_dh_auto_clean:
 	make -f Makefile.git clean
