@@ -120,7 +120,7 @@ void qtractorOptions::loadOptions (void)
 
 	// Transport options group.
 	m_settings.beginGroup("/Transport");
-	bMetronome       = m_settings.value("/Metronome", false).toBool();
+	bMetronome       = m_settings.value("/Metronome", true).toBool();
 	bFollowPlayhead  = m_settings.value("/FollowPlayhead", true).toBool();
 	bAutoBackward    = m_settings.value("/AutoBackward", false).toBool();
 	bContinuePastEnd = m_settings.value("/ContinuePastEnd", true).toBool();
@@ -139,8 +139,8 @@ void qtractorOptions::loadOptions (void)
 	bAudioWsolaTimeStretch = m_settings.value("/WsolaTimeStretch", true).toBool();
 	bAudioWsolaQuickSeek = m_settings.value("/WsolaQuickSeek", false).toBool();
 	bAudioPlayerBus      = m_settings.value("/PlayerBus", false).toBool();
-	bAudioMetroBus       = m_settings.value("/MetroBus", false).toBool();
-	bAudioMetronome      = m_settings.value("/Metronome", false).toBool();
+	bAudioMetroBus       = m_settings.value("/MetroBus", true).toBool();
+	bAudioMetronome      = m_settings.value("/Metronome", true).toBool();
 	bAudioMasterAutoConnect = m_settings.value("/MasterAutoConnect", true).toBool();
 	bAudioPlayerAutoConnect = m_settings.value("/PlayerAutoConnect", true).toBool();
 	bAudioMetroAutoConnect = m_settings.value("/MetroAutoConnect", true).toBool();
@@ -156,7 +156,7 @@ void qtractorOptions::loadOptions (void)
 	bMidiPlayerBus     = m_settings.value("/PlayerBus", false).toBool();
 	bMidiControlBus    = m_settings.value("/ControlBus", false).toBool();
 	bMidiMetroBus      = m_settings.value("/MetroBus", false).toBool();
-	bMidiMetronome     = m_settings.value("/Metronome", true).toBool();
+	bMidiMetronome     = m_settings.value("/Metronome", false).toBool();
 	iMidiMetroOffset   = m_settings.value("/MetroOffset", 0).toInt();
 	iMidiMmcDevice     = m_settings.value("/MmcDevice", 0x7f).toInt();
 	iMidiMmcMode       = m_settings.value("/MmcMode", 3).toInt();
@@ -167,9 +167,9 @@ void qtractorOptions::loadOptions (void)
 	// Metronome options group.
 	m_settings.beginGroup("/Metronome");
 	// Audio metronome...
-	sMetroBarFilename  = m_settings.value("/BarFilename").toString();
+	sMetroBarFilename  = m_settings.value("/BarFilename", "/usr/share/sounds/qtractor-tt/metro-default-tick.wav").toString();
 	fMetroBarGain      = float(m_settings.value("/BarGain", 1.0).toDouble());
-	sMetroBeatFilename = m_settings.value("/BeatFilename").toString();
+	sMetroBeatFilename = m_settings.value("/BeatFilename", "/usr/share/sounds/qtractor-tt/metro-default-tock.wav").toString();
 	fMetroBeatGain     = float(m_settings.value("/BeatGain", 1.0).toDouble());
 	// MIDI metronome...
 	iMetroChannel      = m_settings.value("/Channel", 9).toInt();
@@ -186,8 +186,8 @@ void qtractorOptions::loadOptions (void)
 	// Last but not least, get the defaults.
 	m_settings.beginGroup("/Default");
 	sSessionExt = m_settings.value("/SessionExt", "qtr-tt").toString();
-	bSessionTemplate = m_settings.value("/SessionTemplate", false).toBool();
-	sSessionTemplatePath = m_settings.value("/SessionTemplatePath").toString();
+	bSessionTemplate = m_settings.value("/SessionTemplate", true).toBool();
+	sSessionTemplatePath = m_settings.value("/SessionTemplatePath", "/usr/share/qtractor-tt/templates/default-tt.qtt-tt").toString();
 	bSessionBackup = m_settings.value("/SessionBackup", false).toBool();
 	iSessionBackupMode = m_settings.value("/SessionBackupMode", 0).toInt();
 	sSessionDir     = m_settings.value("/SessionDir").toString();
