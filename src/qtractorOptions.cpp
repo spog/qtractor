@@ -168,9 +168,9 @@ void qtractorOptions::loadOptions (void)
 	m_settings.beginGroup("/Metronome");
 	// Audio metronome...
 	sMetroBarFilename  = m_settings.value("/BarFilename", "/usr/share/sounds/qtractor-tt/metro-default-tick.wav").toString();
-	fMetroBarGain      = float(m_settings.value("/BarGain", 1.0).toDouble());
+	fMetroBarGain      = float(m_settings.value("/BarGain", 0.32).toDouble());
 	sMetroBeatFilename = m_settings.value("/BeatFilename", "/usr/share/sounds/qtractor-tt/metro-default-tock.wav").toString();
-	fMetroBeatGain     = float(m_settings.value("/BeatGain", 1.0).toDouble());
+	fMetroBeatGain     = float(m_settings.value("/BeatGain", 0.25).toDouble());
 	// MIDI metronome...
 	iMetroChannel      = m_settings.value("/Channel", 9).toInt();
 	iMetroBarNote      = m_settings.value("/BarNote", 76).toInt();
