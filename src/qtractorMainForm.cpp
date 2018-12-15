@@ -2085,14 +2085,10 @@ bool qtractorMainForm::saveSession ( bool bPrompt )
 		// Prompt the guy...
 		QString sExt("qtr-tt");
 		QStringList filters;
-	#ifdef CONFIG_LIBZ
-		filters.append(tr("Session files (*.%1 *.%2 *.%3)")
-			.arg(sExt).arg(qtractorDocument::defaultExt())
-			.arg(qtractorDocument::archiveExt()));
-	#else
-		filters.append(tr("Session files (*.%1 *.%2)")
-			.arg(sExt).arg(qtractorDocument::defaultExt()));
-	#endif
+		filters.append(tr("Session files (*.%1)")
+			.arg(sExt));
+		filters.append(tr("Session files (*.%1)")
+			.arg(qtractorDocument::defaultExt()));
 		filters.append(tr("Template files (*.%1)")
 			.arg(qtractorDocument::templateExt()));
 	#ifdef CONFIG_LIBZ
@@ -2114,8 +2110,23 @@ bool qtractorMainForm::saveSession ( bool bPrompt )
 		// Try to rename as if a backup is about...
 		sFilename = sessionBackupPath(sFilename);
 	#if 1//QT_VERSION < 0x040400
+		QString selectedFilter;
 		sFilename = QFileDialog::getSaveFileName(pParentWidget,
-			sTitle, sFilename, sFilter, NULL, options);
+			sTitle, sFilename, sFilter, &selectedFilter, options);
+	#ifdef CONFIG_DEBUG
+		qDebug("qtractorMainForm::::%s@%d sFilename:%s selectedFilter:%s", __func__, __LINE__, sFilename.toUtf8().constData(), selectedFilter.toUtf8().constData());
+	#endif
+		if (selectedFilter == filters[0])
+			sExt = "qtr-tt";
+		else if (selectedFilter == filters[1])
+			sExt = "qts-tt";
+		else if (selectedFilter == filters[2])
+			sExt = "qtt-tt";
+		else if (selectedFilter == filters[3])
+			sExt = "qtz-tt";
+	#ifdef CONFIG_DEBUG
+		qDebug("qtractorMainForm::::%s@%d sFilename:%s sExt:%s", __func__, __LINE__, sFilename.toUtf8().constData(), sExt.toUtf8().constData());
+	#endif
 	#else
 		// Construct save-file session/template dialog...
 		QFileDialog fileDialog(pParentWidget,
