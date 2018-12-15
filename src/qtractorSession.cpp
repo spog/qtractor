@@ -2113,8 +2113,10 @@ bool qtractorSession::loadElement (
 	qtractorSession::clear();
 	qtractorSession::lock();
 
-	// Templates have no session name...
-	if (!pDocument->isTemplate())
+	// Templates have no session name, no sample rate...
+	if (pDocument->isTemplate())
+		qtractorSession::setSampleRate(audioEngine()->sampleRate());
+	else
 		qtractorSession::setSessionName(pElement->attribute("name"));
 
 	// Session state should be postponed...
@@ -2147,9 +2149,10 @@ bool qtractorSession::loadElement (
 					qtractorSession::setSessionDir(eProp.text());
 				else if (eProp.tagName() == "description")
 					qtractorSession::setDescription(eProp.text());
-				else if (eProp.tagName() == "sample-rate")
-					qtractorSession::setSampleRate(eProp.text().toUInt());
-				else if (eProp.tagName() == "tempo")
+				else if (eProp.tagName() == "sample-rate") {
+					if (!pDocument->isTemplate())
+						qtractorSession::setSampleRate(eProp.text().toUInt());
+				} else if (eProp.tagName() == "tempo")
 					qtractorSession::setTempo(eProp.text().toFloat());
 				else if (eProp.tagName() == "ticks-per-beat")
 					qtractorSession::setTicksPerBeat(eProp.text().toUShort());
@@ -2404,8 +2407,9 @@ bool qtractorSession::saveElement (
 	}
 	pDocument->saveTextElement("description",
 		qtractorSession::description(), &eProps);
-	pDocument->saveTextElement("sample-rate",
-		QString::number(qtractorSession::sampleRate()), &eProps);
+	if (!pDocument->isTemplate())
+		pDocument->saveTextElement("sample-rate",
+			QString::number(qtractorSession::sampleRate()), &eProps);
 	pDocument->saveTextElement("tempo",
 		QString::number(qtractorSession::tempo()), &eProps);
 	pDocument->saveTextElement("ticks-per-beat",

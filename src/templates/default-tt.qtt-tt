@@ -1,9 +1,8 @@
 <!DOCTYPE qtractorSession>
-<session version="Qtractor-tt 0.9.3" name="default-tt">
+<session version="Qtractor-tt 0.9.3">
  <properties>
   <directory>/home/samo/Qtractor-tt-projects/templates</directory>
   <description></description>
-  <sample-rate>48000</sample-rate>
   <tempo>120</tempo>
   <ticks-per-beat>960</ticks-per-beat>
   <beats-per-bar>4</beats-per-bar>
@@ -15,17 +14,13 @@
   <punch-in>0</punch-in>
   <punch-out>0</punch-out>
  </state>
- <files>
-  <audio-list/>
-  <midi-list/>
- </files>
  <devices>
   <audio-engine>
    <audio-control>
     <transport-mode>duplex</transport-mode>
     <timebase>1</timebase>
    </audio-control>
-   <audio-bus mode="duplex" name="Master">
+   <audio-bus name="Master" mode="duplex">
     <monitor>0</monitor>
     <channels>2</channels>
     <auto-connect>0</auto-connect>
@@ -49,7 +44,7 @@
      </connect>
     </output-connects>
    </audio-bus>
-   <audio-bus mode="input" name="Metronome-in">
+   <audio-bus name="Metronome-in" mode="input">
     <monitor>0</monitor>
     <channels>2</channels>
     <auto-connect>0</auto-connect>
@@ -59,6 +54,16 @@
     <input-plugins/>
     <input-connects/>
    </audio-bus>
+   <metronome-outputs>
+    <connect index="0">
+     <client>system</client>
+     <port>playback_1</port>
+    </connect>
+    <connect index="1">
+     <client>system</client>
+     <port>playback_2</port>
+    </connect>
+   </metronome-outputs>
   </audio-engine>
   <midi-engine>
    <midi-control>
@@ -67,7 +72,7 @@
     <spp-mode>duplex</spp-mode>
     <clock-mode>none</clock-mode>
    </midi-control>
-   <midi-bus mode="duplex" name="Master">
+   <midi-bus name="Master" mode="duplex">
     <monitor>0</monitor>
     <input-gain>1</input-gain>
     <input-panning>0</input-panning>
@@ -79,7 +84,7 @@
     </input-plugins>
     <input-connects>
      <connect index="0">
-      <client>129:a2jmidid</client>
+      <client>128:a2jmidid</client>
       <port>0:port</port>
      </connect>
     </input-connects>
@@ -93,7 +98,7 @@
     </output-plugins>
     <output-connects>
      <connect index="0">
-      <client>129:a2jmidid</client>
+      <client>128:a2jmidid</client>
       <port>0:port</port>
      </connect>
     </output-connects>
@@ -109,7 +114,7 @@
    <edit-head>0</edit-head>
    <edit-tail>0</edit-tail>
   </view>
-  <track name="Metronome" type="tempo">
+  <track type="tempo" name="Metronome">
    <properties>
     <input-bus>Metronome-in</input-bus>
     <output-bus>Master</output-bus>
@@ -128,7 +133,7 @@
     <foreground-color>#7f667f</foreground-color>
    </view>
    <tempo-map>
-    <tempo-node bar="0" frame="0">
+    <tempo-node frame="0" bar="0">
      <tempo>120</tempo>
      <beat-type>2</beat-type>
      <beats-per-bar>4</beats-per-bar>
@@ -137,7 +142,6 @@
     </tempo-node>
    </tempo-map>
    <controllers/>
-   <clips/>
    <plugins/>
   </track>
  </tracks>
