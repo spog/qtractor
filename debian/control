@@ -1,25 +1,28 @@
 Source: qtractor-tt
 Section: sound
-Priority: extra
+Priority: optional
 Maintainer: Samo Pogačnik <samo_pogacnik@t-2.net>
-Build-Depends: debhelper (>= 5), automake, pkg-config, qtbase5-dev (>= 5.1),
-  qtbase5-dev-tools (>= 5.1), qttools5-dev-tools (>= 5.1), qtchooser,
-  libjack-dev, libasound2-dev, libsndfile-dev, ladspa-sdk, libvorbis-dev,
-  libsamplerate-dev, librubberband-dev, dssi-dev, liblo0-dev, libmad0-dev,
-  libz-dev, libx11-dev, x11proto-core-dev, liblilv-dev, libsratom-dev,
-  libsord-dev, libserd-dev, libsuil-dev, lv2-dev, zlib1g-dev,
-  libqt5x11extras5-dev (>= 5.1)
-Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 11), automake, pkg-config, qtbase5-dev (>= 5.1),
+ qtbase5-dev-tools (>= 5.1), qttools5-dev-tools (>= 5.1), qtchooser,
+ libjack-dev, libasound2-dev, libsndfile-dev, ladspa-sdk, libvorbis-dev,
+ libsamplerate-dev, librubberband-dev, dssi-dev, liblo0-dev, libmad0-dev,
+ libz-dev, libx11-dev, x11proto-core-dev, liblilv-dev, libsratom-dev,
+ libsord-dev, libserd-dev, libsuil-dev, lv2-dev, zlib1g-dev,
+ libqt5x11extras5-dev (>= 5.1)
+Standards-Version: 4.1.4
 
 Package: qtractor-tt
 Architecture: any
 Depends: jackd, ${shlibs:Depends}, ${misc:Depends}
-Description: An Audio/MIDI multi-track sequencer.
-  Qtractor is an Audio/MIDI multi-track sequencer application
-  written in C++ with the Qt framework. Target platform will be
-  Linux, where the Jack Audio Connection Kit (JACK) for audio,
-  and the Advanced Linux Sound Architecture (ALSA) for MIDI,
-  are the main infrastructures to evolve as a fairly-featured
-  Linux Desktop Audio Workstation GUI, specially dedicated to
-  the personal home-studio.
+Description: Audio/MIDI multi-track sequencer with tempo-tracks
+ Qtractor is an Audio/MIDI multi-track sequencer application
+ written in C++ with the Qt framework. Target platform will be
+ Linux, where the Jack Audio Connection Kit (JACK) for audio,
+ and the Advanced Linux Sound Architecture (ALSA) for MIDI,
+ are the main infrastructures to evolve as a fairly-featured
+ Linux Desktop Audio Workstation GUI, specially dedicated to
+ the personal home-studio.
+ .
+ The "tt" version of Qtractor provides additional tempo-tracks
+ feature.
 
