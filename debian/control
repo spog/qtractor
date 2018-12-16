@@ -24,5 +24,6 @@ Description: Audio/MIDI multi-track sequencer with tempo-tracks
  the personal home-studio.
  .
  The "tt" version of Qtractor provides additional tempo-tracks
- feature.
+ feature. This package may be installed in parallel with the original
+ Qtractor package.
 
