@@ -20,7 +20,7 @@
     <transport-mode>duplex</transport-mode>
     <timebase>1</timebase>
    </audio-control>
-   <audio-bus name="Master" mode="duplex">
+   <audio-bus mode="duplex" name="Master">
     <monitor>0</monitor>
     <channels>2</channels>
     <auto-connect>0</auto-connect>
@@ -44,7 +44,7 @@
      </connect>
     </output-connects>
    </audio-bus>
-   <audio-bus name="Metronome-in" mode="input">
+   <audio-bus mode="input" name="Metronome-in">
     <monitor>0</monitor>
     <channels>2</channels>
     <auto-connect>0</auto-connect>
@@ -72,7 +72,7 @@
     <spp-mode>duplex</spp-mode>
     <clock-mode>none</clock-mode>
    </midi-control>
-   <midi-bus name="Master" mode="duplex">
+   <midi-bus mode="duplex" name="Master">
     <monitor>0</monitor>
     <input-gain>1</input-gain>
     <input-panning>0</input-panning>
@@ -114,7 +114,7 @@
    <edit-head>0</edit-head>
    <edit-tail>0</edit-tail>
   </view>
-  <track type="tempo" name="Metronome">
+  <track name="Metronome" type="tempo">
    <properties>
     <input-bus>Metronome-in</input-bus>
     <output-bus>Master</output-bus>
