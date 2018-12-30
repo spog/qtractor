@@ -3,7 +3,7 @@ AC_INIT(Qtractor-tt, 0.9.3, rncbc@rncbc.org, qtractor)
 
 AC_CONFIG_SRCDIR(src/qtractor.cpp)
 AC_CONFIG_HEADERS(src/config.h)
-AC_CONFIG_FILES(Makefile qtractor.spec src/src.pri)
+AC_CONFIG_FILES(Makefile src/src.pri)
 AC_CONFIG_FILES(src/qtractor_plugin_scan.pri)
 
 # Build version string.
