@@ -52,16 +52,25 @@
     <input-panning>0</input-panning>
     <input-controllers/>
     <input-plugins/>
-    <input-connects/>
+    <input-connects>
+     <connect index="0">
+      <client>Qtractor-tt</client>
+      <port>Metronome/out_1</port>
+     </connect>
+     <connect index="1">
+      <client>Qtractor-tt</client>
+      <port>Metronome/out_2</port>
+     </connect>
+    </input-connects>
    </audio-bus>
    <metronome-outputs>
     <connect index="0">
-     <client>system</client>
-     <port>playback_1</port>
+     <client>Qtractor-tt</client>
+     <port>Metronome-in/in_1</port>
     </connect>
     <connect index="1">
-     <client>system</client>
-     <port>playback_2</port>
+     <client>Qtractor-tt</client>
+     <port>Metronome-in/in_2</port>
     </connect>
    </metronome-outputs>
   </audio-engine>
@@ -124,7 +133,7 @@
     <solo>1</solo>
     <record>0</record>
     <monitor>1</monitor>
-    <gain>0.0481393</gain>
+    <gain>0.1</gain>
     <panning>0</panning>
    </state>
    <view>
