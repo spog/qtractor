@@ -1,5 +1,5 @@
 # Process this file with autoconf to produce a configure script.
-AC_INIT(Qtractor-tt, 0.9.3, rncbc@rncbc.org, qtractor)
+AC_INIT(Qtractor-tt, 0.9.2.x, rncbc@rncbc.org, qtractor-tt)
 
 AC_CONFIG_SRCDIR(src/qtractor.cpp)
 AC_CONFIG_HEADERS(src/config.h)
@@ -18,7 +18,10 @@ AC_CACHE_VAL([ac_cv_build_version], [
          ac_cv_build_version="$ac_cv_build_version [[$ac_cv_build_version_extra]]"
       fi
    else
-      ac_cv_build_version=$PACKAGE_VERSION
+      ac_cv_build_version=$(dpkg-parsechangelog --show-field Version 2>/dev/null)
+      if test -z "$ac_cv_build_version"; then
+         ac_cv_build_version=$PACKAGE_VERSION
+      fi
    fi
 ])
 ac_build_version="$ac_cv_build_version"
