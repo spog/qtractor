@@ -1,3 +1,10 @@
+qtractor-tt (0.9.2.3-1) bionic; urgency=low
+
+  * Added support for a "debian" version.
+  * Adapting metronome defaults and its template connections
+
+ -- Samo Pogačnik <samo_pogacnik@t-2.net>  Mon, 31 Dec 2018 13:34:09 +0100
+
 qtractor-tt (0.9.2.2-1) bionic; urgency=low
 
   * Removed ".spec" file.
