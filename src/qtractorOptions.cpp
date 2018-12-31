@@ -143,7 +143,7 @@ void qtractorOptions::loadOptions (void)
 	bAudioMetronome      = m_settings.value("/Metronome", true).toBool();
 	bAudioMasterAutoConnect = m_settings.value("/MasterAutoConnect", true).toBool();
 	bAudioPlayerAutoConnect = m_settings.value("/PlayerAutoConnect", true).toBool();
-	bAudioMetroAutoConnect = m_settings.value("/MetroAutoConnect", true).toBool();
+	bAudioMetroAutoConnect = m_settings.value("/MetroAutoConnect", false).toBool();
 	iAudioMetroOffset  = (unsigned long) m_settings.value("/MetroOffset", 0).toUInt();
 	m_settings.endGroup();
 
