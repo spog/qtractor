@@ -2702,6 +2702,11 @@ void qtractorLv2Plugin::setChannels ( unsigned short iChannels )
 	const unsigned short iAudioIns = pLv2Type->audioIns();
 	const unsigned short iAudioOuts = pLv2Type->audioOuts();
 
+#ifdef CONFIG_DEBUG
+	qDebug("qtractorLv2Plugin[%p]::%s@%d: iAudioOuts=%d", this,
+		__func__, __LINE__, iAudioOuts);
+#endif
+
 	if (iChannels < iAudioIns) {
 		if (m_pfIDummy)
 			delete [] m_pfIDummy;

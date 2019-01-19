@@ -420,6 +420,10 @@ qtractorMidiManager::qtractorMidiManager (
 
 	m_pEventBuffer = new snd_seq_event_t [MaxMidiEvents];
 
+#ifdef CONFIG_DEBUG_0
+	qDebug("qtractorMidiManager[%p]::%s@%d: constructor", this, __func__,
+		__LINE__);
+#endif
 #ifdef CONFIG_MIDI_PARSER
 	if (snd_midi_event_new(c_iMaxMidiData, &m_pMidiParser) == 0)
 		snd_midi_event_no_status(m_pMidiParser, 1);
@@ -459,6 +463,9 @@ qtractorMidiManager::qtractorMidiManager (
 // Destructor.
 qtractorMidiManager::~qtractorMidiManager (void)
 {
+#ifdef CONFIG_DEBUG_0
+	qDebug("qtractorMidiManager[%p]::%s@%d: destructor", this, __func__, __LINE__);
+#endif
 	deleteAudioOutputBus();
 
 	// Destroy event_buffers...
@@ -1284,10 +1291,28 @@ void qtractorMidiManager::createAudioOutputBus (void)
 	// Whether audio output bus is here owned, or...
 	if (m_bAudioOutputBus) {
 		// Owned, not part of audio engine...
+		// Get last plugin outputs...
+		unsigned short iAudioOuts = 2;
+		qtractorPluginType *pType;
+		qtractorPlugin *pPlugin = m_pPluginList->first();
+		if (pPlugin) {
+			while (pPlugin->next());
+			pType = pPlugin->type();
+		#ifdef CONFIG_DEBUG_0
+			qDebug("qtractorMidiManager[%p]::%s@%d: pType->audioOuts()=%d",
+				this, __func__, __LINE__, pType->audioOuts());
+		#endif
+			if (pType->audioOuts() > iAudioOuts)
+				iAudioOuts = pType->audioOuts();
+		}
+	#ifdef CONFIG_DEBUG_0
+		else qDebug("qtractorMidiManager[%p]::%s@%d: pPlugin=NULL", this, __func__,
+			    __LINE__);
+	#endif
 		m_pAudioOutputBus
 			= new qtractorAudioBus(pAudioEngine, m_pPluginList->name(),
 				qtractorBus::BusMode(qtractorBus::Output | qtractorBus::Ex),
-				false, 2); // FIXME: Make it always stereo (2ch).
+				false, iAudioOuts); // Num. of last plugin output channels or 2.
 		m_pAudioOutputBus->setAutoConnect(m_bAudioOutputAutoConnect);
 		if (pAudioEngine->isActivated()) {
 			pAudioEngine->addBusEx(m_pAudioOutputBus);
@@ -1295,6 +1320,9 @@ void qtractorMidiManager::createAudioOutputBus (void)
 				m_pAudioOutputBus->autoConnect();
 		}
 	} else {
+		// FIXED???: Make it always stereo (2ch).
+		if (m_pPluginList->channels() != 2)
+			m_pPluginList->setChannelsEx(0, false);
 		// Find named audio output bus, if any...
 		if (!m_sAudioOutputBusName.isEmpty())
 			m_pAudioOutputBus = static_cast<qtractorAudioBus *> (
