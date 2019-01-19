@@ -1,3 +1,9 @@
+qtractor-tt (0.9.2.4-1) bionic; urgency=low
+
+  * Added plugin's multi-audio output usage.
+
+ -- Samo Pogačnik <samo_pogacnik@t-2.net>  Sat, 19 Jan 2019 10:25:29 +0100
+
 qtractor-tt (0.9.2.3-2) bionic; urgency=low
 
   * Added build dependency libgtk2.0-dev
